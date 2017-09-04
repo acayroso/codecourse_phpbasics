@@ -121,12 +121,12 @@
                     <ul>
                         <li>Defining an empty array: $names = [];</li>
                         <li>Array with one data type: $web_dev = ['php','html','css'];</li>
-                        <li>Array with multiple data types: $emp = ['Adrian Ayroso',40470,true];</li>
+                        <li>Array with multiple data types: $emp = ['Adrian Ayroso',10001,true];</li>
                         <li>Use var_dump to examine array content</li>
                             <?php
                                 $names = [];
                                 $web_dev = ['php','html','css'];
-                                $emp = ['Adrian Ayroso',40470,true];
+                                $emp = ['Adrian Ayroso',10001,true];
                                 var_dump($names);
                                 var_dump($web_dev);
                                 var_dump($emp);
@@ -191,8 +191,8 @@
                         <li>Using ternary operator to compare values ===</li>
                             <?php
                                 $username = 'adrian.ayroso';
-                                $password = 'P@assword1';
-                                if(($username === 'adrian.ayroso') && ($password === 'P@assword1')){
+                                $password = 'Please123';
+                                if(($username === 'adrian.ayroso') && ($password === 'Please123')){
                                     echo "Successful login.";
                                 }
                             ?>
