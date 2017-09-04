@@ -224,5 +224,128 @@
                     </ul>
                 </section>
              
+            <h4>Switch Statements</h4>
+                <section>
+                    <ul>
+                        <li>Using integer values, $option = 2</li>
+                            <?php
+                                $option = 2;
+                                switch($option){
+                                    case 1:
+                                        echo "one";
+                                        break;
+                                    case 2:
+                                        echo "two";
+                                        break;
+                                    case 3:
+                                        echo "three";
+                                        break;
+                                    default:
+                                        echo "unidentified";
+                                }
+                            ?>
+                        <li>Using string values,$number = 'three'</li>
+                            <?php
+                                $number = 'Three';
+                                switch(strtolower($number)){
+                                    case 'one':
+                                        echo '1';
+                                        break;
+                                    case 'two':
+                                        echo '2';
+                                        break;
+                                    case 'three':
+                                        echo '3';
+                                        break;
+                                    default:
+                                        echo "unidentified";
+                                }
+                            ?>
+                    </ul>
+                </section>
+            
+        <h3>Functions</h3>
+            <h4>Function basics</h4>
+                <section>
+                    <ul>
+                        <li>Function with no arguments</li>
+                            <?php
+                                hello();
+
+                                function hello(){
+                                    echo "Hello";
+                                }
+                            ?>
+                        <li>Function with arguments and default value</li>
+                            <?php
+                                createBox('red','plastic','large');
+                                createBox('green','wood');
+
+                                function createBox($color, $material, $size = 'small'){
+                                    echo "Color: {$color}" . "<br/>";
+                                    echo "Material: {$material}" . "<br/>";
+                                    echo "Size: {$size}" . "<br/>";
+                                }
+                            ?>
+                    </ul>
+                </section>
+
+            <h4>func_get_args</h4>
+                <section>
+                    <ul>
+                        <li>Handle varying amount of args that is passed to an array.</li>
+                        <li><strong>NOTE:</strong>func_get_args is different from func_get_arg(int arg)</li>
+                            <?php
+                                function display(){
+//                                        foreach(func_get_args() as $number){
+//                                            echo $number;
+//                                        }
+
+                                      return array_sum(func_get_args());  
+                                }
+
+                                echo display(5,10);
+                                echo "<br/>";
+                                echo display(5,10,15);
+                            ?>
+                        <li>Scope of variables in functions, a variable defined in a function is local</li>
+                            <?php 
+                                $status = 'employed';
+
+                                displayStatus();
+
+                                function displayStatus(){
+                                    $status = 'terminated';
+                                    echo "Status: {$status}";
+                                }
+
+                            ?>
+                    </ul>
+                </section>
+                
+        <h3>Continued learning</h3> 
+            <h4>Breaking up files</h4>
+                <section>
+                    <ul>require_once - code does not proceed if required file is missing.</ul>
+                    <ul>Using folders to orginize code; require_once 'functions/hello.php';</ul>
+                        <?php
+                            require_once 'functions/hello.php';
+                            helloPHP();
+                        ?>
+                </section>
+            
+            <h4>POST and GET super globals</h4>
+                <section>
+                    <ul>$_POST[] are usually used for "search terms" or "pages"</ul>
+                    <ul>$_GET[] are usually used for Forms.</ul>
+                </section>  
+            
+        <h3>Practical Projects</h3>
+            <section>
+                <ul>
+                    <li><a href="projects/login_page/login_page.php">Login page</a></li>
+                </ul>
+            </section>
+                
     </body>
 </html>
